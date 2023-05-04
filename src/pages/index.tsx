@@ -1,124 +1,132 @@
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
+import React , { useEffect, useState ,useRef , useCallback } from 'react'
+import Slider from '../components/slider'
+import Portfolio from '../components/Portfolio'
+import NavBar from '@/components/NavBar'
 
-const inter = Inter({ subsets: ['latin'] })
+const tools = ['Gatsby', 'Next.js', 'firebase', 'tailwind', 'styled components', 'Sass', 'react-query' , 'GraphQL', 'Typescript']
+const toolLogos = ['/React.svg','/gatsby-seeklogo.com.svg','/Nextjs-logo.svg','/firebase-logo.svg','/Tailwind_CSS_logo.svg','/sass-logo.svg','/GraphQL_Logo.svg','/reactquery-logo.png','/chart.svg']
 
 export default function Home() {
+
+  const [scrollTop, setScrollTop] = useState<number>(0);
+  const [goingDown, setGoingDown] = useState<boolean>(false)
+
+  useEffect(()=>{
+
+    const updateScroll = (e: Event) => {
+      const target = e.target as HTMLDivElement
+
+      const actualOffset = target.scrollTop 
+
+      actualOffset > scrollTop ? setGoingDown(true) : setGoingDown(false)
+    }
+    document.querySelector('.container')?.addEventListener('scroll',updateScroll)
+
+    return () => {
+       document.querySelector('.container')?.removeEventListener('scroll',updateScroll)
+      }
+  },[scrollTop])
+
+  useEffect(()=>{
+console.log('useffect run')
+  const classes = ['opacity-100','blur-0']
+  const observer = new IntersectionObserver((entries)=>{
+    entries.forEach((entry) => {
+      if(entry.isIntersecting) {
+        entry.target.classList.add(...classes)
+        console.log('intersecting!')
+      }
+
+      else entry.target.classList.remove(...classes)
+    })
+  },
+  { rootMargin: '-20%'}
+  )
+  
+  const sections = document.querySelectorAll('.slides')
+  sections.forEach(section => observer.observe(section))
+
+  return () => {
+    sections.forEach(section => observer.disconnect())
+  }
+  },[])
+
+
+  const handleScroll = (e: React.SyntheticEvent) => {
+    const target = e.target as HTMLDivElement
+    setScrollTop(target.scrollTop);
+  };
+
+
+  const scrollOnClick = (target: any) => {
+    
+    const container = document.querySelector('.container') as HTMLDivElement
+
+    
+   const pageOffset = target.offsetTop
+
+    container.scrollTo({
+      top: pageOffset,
+      behavior: 'smooth'
+    });
+  }
+
+  const handleClick = (e: React.SyntheticEvent) => {
+    
+    const target = e.target as HTMLAnchorElement
+
+    scrollOnClick(target)
+    
+  }
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/pages/index.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <div className="bg-white h-screen bg-main relative">
+      <div className='h-full box-border px-2 lg:px-12 py-4 z-1'>
+        <NavBar goingDown={goingDown} handleClick={handleClick} />
+        <div onScroll={handleScroll} className='container px-4 lg:px-12 h-full w-full overflow-x-hidden overflow-y-scroll scrollbar-hide bg-gray-950 rounded-md bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-40 border border-gray-100'>
+                <div className='w-full flex flex-col place-content-center pt-32'>
+                  <h1 className='text-5xl lg:text-7xl'>Hello there</h1>
+                  <h2 className='text-2xl'>Mind if I borrow 3 minutes of your life?</h2>
+                  <button onClick={handleClick} className='self-center w-fit text-xs my-4 p-2 border rounded-md bg-opacity-5'><a href='#myself'>Absolutely, lets go</a></button>
+                  <div className='pt-24 text-center'>  
+                  <Slider images={toolLogos} />
+                    <section className='pt-24'>
+                      <p className='mb-4 slides opacity-0 transition-all'>As a front end developer, I like solving problems and connecting wires but foremost, leaving things pretty!</p>
+                      <p className='slides opacity-0 transition-all'>If you are seeking for someone who is always looking to work with the latest technologies and the best way to solve any problem, you are in the right place. </p>
+                    </section>
+                  </div>
+                </div>
+                <div className='w-full' id="myself">
+                  <h1 className='text-7xl p-4 slides opacity-0 transition-all'>Myself</h1>
+                  <p className='lg:px-12 slides opacity-0 transition-all'>`I am a self-taught Javascript developer based in Buenos Aires. I am deeply passionate about coding and building digital experiences constantly learing.`</p>
+                </div>
+                <div className='w-full text-center py-6 slides opacity-0 transition-all'>
+                  <div className='flex justify-around py-2'>
+                    <h3 className='p-1 text-xs'>Gatsby</h3>
+                    <h3 className='p-1 text-xs'>Next.js</h3>
+                    <h3 className='p-1 text-xs'>firebase</h3>
+                  </div>
+                  <div className='flex justify-between py-2'>
+                    <h3 className='p-1 text-xs break-all'>Styled Components</h3>
+                    <h3 className='p-1 text-xs'>TailwindCss</h3>
+                    <h3 className='p-1 text-xs'>GraphQL</h3>
+                  </div>
+                  <div className='flex justify-around py-2'>
+                    <h3 className='p-1 text-xs'>react-query</h3>
+                    <h3 className='p-1 text-xs'>Sass</h3>
+                    <h3 className='p-1 text-xs'>Typescript</h3>
+                  </div>
+                </div>
+                <div className='w-full lg:px-12 slides opacity-0 transition-all'>
+                <p>I got my start in coding by creating games, which helped me develop a keen eye for detail and a love of problem-solving.</p>
+                <p className='mt-4'>{`Today, with 1 year of experience under my belt, I'm skilled at working with APIs, databases, and popular React frameworks like Next.js and Gatsby. I'm always excited to take on new challenges and create innovative solutions for my clients and their users.`}</p>
+                </div>  
+                <div id="portfolio" className='slides opacity-0 transition-all'>
+                  <Portfolio />
+                </div>
         </div>
       </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700/10 after:dark:from-sky-900 after:dark:via-[#0141ff]/40 before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`${inter.className} mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p
-            className={`${inter.className} m-0 max-w-[30ch] text-sm opacity-50`}
-          >
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`${inter.className} mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p
-            className={`${inter.className} m-0 max-w-[30ch] text-sm opacity-50`}
-          >
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`${inter.className} mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p
-            className={`${inter.className} m-0 max-w-[30ch] text-sm opacity-50`}
-          >
-            Discover and deploy boilerplate example Next.js&nbsp;projects.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`${inter.className} mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p
-            className={`${inter.className} m-0 max-w-[30ch] text-sm opacity-50`}
-          >
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+      
+    </div>
   )
 }
