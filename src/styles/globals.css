@@ -15,9 +15,6 @@
   }
 }
 
-h1,h2 {
-}
-
 html {
   scroll-behavior: smooth;
 }
@@ -34,3 +31,4 @@ body {
   background-size: cover;
   background-attachment: fixed;
 }
+

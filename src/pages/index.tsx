@@ -98,7 +98,7 @@ console.log('useffect run')
                 </div>
                 <div className='w-full' id="myself">
                   <h1 className='text-7xl p-4 slides opacity-0 transition-all'>Myself</h1>
-                  <p className='lg:px-12 slides opacity-0 transition-all'>`I am a self-taught Javascript developer based in Buenos Aires. I am deeply passionate about coding and building digital experiences constantly learing.`</p>
+                  <p className='lg:px-12 slides opacity-0 transition-all'>I am a self-taught React developer based in Buenos Aires. I am deeply passionate about coding and building digital experiences.</p>
                 </div>
                 <div className='w-full text-center py-6 slides opacity-0 transition-all'>
                   <div className='flex justify-around py-2'>
