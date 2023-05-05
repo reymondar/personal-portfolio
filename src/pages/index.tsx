@@ -91,13 +91,13 @@ console.log('useffect run')
                   <div className='pt-24 text-center'>  
                   <Slider images={toolLogos} />
                     <section className='pt-24'>
-                      <p className='mb-4 slides opacity-0 transition-all'>As a front end developer, I like solving problems and connecting wires but foremost, leaving things pretty!</p>
+                      <p className='mb-4 slides opacity-0 transition-all' id="myself">As a front end developer, I like solving problems and connecting wires but foremost, leaving things pretty!</p>
                       <p className='slides opacity-0 transition-all'>If you are seeking for someone who is always looking to work with the latest technologies and the best way to solve any problem, you are in the right place. </p>
                     </section>
                   </div>
                 </div>
-                <div className='w-full' id="myself">
-                  <h1 className='text-7xl p-4 slides opacity-0 transition-all'>Myself</h1>
+                <div className='w-full'>
+                  <h1 className='text-7xl p-1 pb-4 sm:p-4 slides opacity-0 transition-all'>Myself</h1>
                   <p className='lg:px-12 slides opacity-0 transition-all'>I am a self-taught React developer based in Buenos Aires. I am deeply passionate about coding and building digital experiences.</p>
                 </div>
                 <div className='w-full text-center py-6 slides opacity-0 transition-all'>
@@ -107,7 +107,7 @@ console.log('useffect run')
                     <h3 className='p-1 text-xs'>firebase</h3>
                   </div>
                   <div className='flex justify-between py-2'>
-                    <h3 className='p-1 text-xs break-all'>Styled Components</h3>
+                    <h3 className='p-1 text-xs break-all'>git</h3>
                     <h3 className='p-1 text-xs'>TailwindCss</h3>
                     <h3 className='p-1 text-xs'>GraphQL</h3>
                   </div>
@@ -117,9 +117,9 @@ console.log('useffect run')
                     <h3 className='p-1 text-xs'>Typescript</h3>
                   </div>
                 </div>
-                <div className='w-full lg:px-12 slides opacity-0 transition-all'>
-                <p>I got my start in coding by creating games, which helped me develop a keen eye for detail and a love of problem-solving.</p>
-                <p className='mt-4'>{`Today, with 1 year of experience under my belt, I'm skilled at working with APIs, databases, and popular React frameworks like Next.js and Gatsby. I'm always excited to take on new challenges and create innovative solutions for my clients and their users.`}</p>
+                <div className='w-full lg:px-12'>
+                <p className='slides opacity-0 transition-all'>I got my start in coding by creating games, which helped me develop a keen eye for detail and a love of problem-solving.</p>
+                <p className='mt-4 slides opacity-0 transition-all'>{`Today, with 1 year of experience under my belt, I'm skilled at working with APIs, databases, and popular React frameworks like Next.js and Gatsby. I'm always excited to take on new challenges and create innovative solutions for my clients and their users.`}</p>
                 </div>  
                 <div id="portfolio" className='slides opacity-0 transition-all'>
                   <Portfolio />

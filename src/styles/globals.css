@@ -25,6 +25,10 @@ body {
   transition: scroll-behavior 0.5s ease-in-out;
 }
 
+p {
+  font-family: 'monserrat', sans-serif;
+}
+
 .bg-main {
   background-image: url('../../public/bg-port.jpg');
   background-repeat: no-repeat;
