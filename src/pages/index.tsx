@@ -80,10 +80,9 @@ console.log('useffect run')
   }
 
   return (
-    <div className="bg-white h-screen bg-main relative sm:flex sm:justify-center">
-      <div className='h-full box-border lg:py-1  lg:px-1 z-1'>
+    <div>
         <NavBar goingDown={goingDown} handleClick={handleClick} />
-        <div onScroll={handleScroll} className='container px-4 lg:px-12 h-full w-full overflow-x-hidden overflow-y-scroll scrollbar-hide bg-gray-950 rounded-md bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-40 border border-gray-100'>
+        <div onScroll={handleScroll} className='bg-main container px-4 lg:px-12 h-full w-full overflow-x-hidden overflow-y-scroll scrollbar-hide bg-gray-950 rounded-md bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-40 border border-gray-100'>
                 <div className='w-full flex flex-col place-content-center pt-32'>
                   <h1 className='text-5xl lg:text-7xl'>Hello there</h1>
                   <h2 className='text-2xl'>Mind if I borrow 3 minutes of your life?</h2>
@@ -126,7 +125,6 @@ console.log('useffect run')
                 </div>
         </div>
       </div>
-      
-    </div>
+     
   )
 }
