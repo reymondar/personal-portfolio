@@ -8,7 +8,7 @@
 :root {
   color:black;
   font-size: 2rem;
-  font-family: 'Bebas Neue', sans-serif;
+  font-family: 'Comfortaa' , sans-serif;
 
   @media (max-width: 700px) {
     font-size: 1rem;
@@ -23,6 +23,13 @@ body {
   color:black;
   scroll-behavior: smooth;
   transition: scroll-behavior 0.5s ease-in-out;
+
+  
+  background-image: url('../../public/meld-blur.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+
 }
 
 h1,h2,a {
@@ -35,11 +42,7 @@ p {
   font-weight: 500;
   
 }
-.bg-main {
-  background-image: url('../../public/meld-blur.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
 
+.bg-main {
 }
 
