@@ -82,37 +82,34 @@ console.log('useffect run')
   }
 
   return (
-    <div className='bg-main px-1 sm:px-4 lg:px-12'>
+    <div className='bg-main px-1 sm:px-4 lg:px-24'>
         <NavBar goingDown={goingDown} handleClick={handleClick} />
-                <div className='w-full flex flex-col place-content-center pt-32'>
-                  <h1 className='text-5xl lg:text-7xl'>Hello there</h1>
-                  <h2 className='text-2xl'>Mind if I borrow 3 minutes of your life?</h2>
-                  <button onClick={handleClick} className='self-center w-fit text-xs my-4 p-2 border rounded-md bg-opacity-5'><a href='#myself'>Absolutely, lets go</a></button>
-                  <div className='pt-24 text-center w-full'>  
-                  <Slider images={toolLogos} />
-                    <section className='pt-24'>
-                      <p className='mb-4 slides opacity-0 transition-all' id="myself">As a front end developer, I like solving problems and connecting wires but foremost, leaving things pretty!</p>
-                      <p className='slides opacity-0 transition-all'>If you are seeking for someone who is always looking to work with the latest technologies and the best way to solve any problem, you are in the right place. </p>
-                    </section>
-                  </div>
-                </div>
-                <div className='w-full'>
-                  <h1 className='text-7xl p-1 pb-4 sm:p-4 slides opacity-0 transition-all'>Myself</h1>
-                  <p className='lg:px-12 slides opacity-0 transition-all'>I am a self-taught React developer based in Buenos Aires. I am deeply passionate about coding and building digital experiences.</p>
-                </div>
-                <div className='w-full flex justify-center py-6 slides opacity-0 transition-all'>
-                 <Image src={myself} alt="myself" width={250} height={250} className='border border-solid rounded-lg object-contain' />  
-                </div>
-                <div className='w-full lg:px-12'>
-                <p className='slides opacity-0 transition-all'>I got my start in coding by creating games, which helped me develop a keen eye for detail and a love of problem-solving.</p>
-                <p className='mt-4 slides opacity-0 transition-all'>{`Today, with 1 year of experience under my belt, I'm skilled at working with APIs, databases, and popular React frameworks like Next.js and Gatsby. I'm always excited to take on new challenges and create innovative solutions for my clients and their users.`}</p>
-                </div>  
-                <div id="portfolio" className='slides opacity-0 transition-all'>
-                  <Portfolio />
-                </div>
-     
-      </div>
-
-     
+        <div className='w-full flex flex-col place-content-center pt-32'>
+          <h2 className='text-center my-4 sm:text-2xl'>{`I'm Ramon Arana, welcome.`}</h2>
+          <h2 className='text-center text-xs'>Mind if I borrow 3 minutes of your life?</h2>
+          <button onClick={handleClick} className='self-center w-fit text-xs my-4 p-2 border rounded-md bg-opacity-5'><a href='#myself'>Absolutely, lets go</a></button>
+          <div className='pt-24 text-center w-full'>  
+            <Slider images={toolLogos} />
+            <section className='pt-24 lg:px-24'>
+              <p className='mb-4 slides opacity-0 transition-all' id="myself">As a front end developer, I like solving problems and connecting wires but foremost, leaving things pretty!</p>
+              <p className='slides opacity-0 transition-all'>If you are seeking for someone who is always looking to work with the latest technologies and the best way to solve any problem, you are in the right place. </p>
+            </section>
+          </div>
+        </div>
+        <div className='w-full lg:px-24'>
+          <h1 className='text-center text-4xl sm:text-7xl p-3 pb-4 sm:p-4 sm:py-8 slides opacity-0 transition-all'>Myself</h1>
+          <p className='lg:px-12 slides opacity-0 transition-all'>I am a self-taught React developer based in Buenos Aires. I am deeply passionate about coding and building digital experiences.</p>
+        </div>
+        <div className='w-full flex justify-center py-6 slides opacity-0 transition-all'>
+          <Image src={myself} alt="myself" width={250} height={250} className='border border-solid border-blue-700 rounded-full object-contain' />  
+        </div>
+        <div className='w-full lg:px-24'>
+          <p className='slides opacity-0 transition-all'>I got my start in coding in college creating games, which helped me develop a keen eye for detail and a love of problem-solving.</p>
+          <p className='mt-4 slides opacity-0 transition-all'>{`Today, with 1 year of experience under my belt, I'm skilled at working with APIs, databases, and popular React frameworks like Next.js and Gatsby. I'm always excited to take on new challenges and create innovative solutions for my clients and their users.`}</p>
+        </div>  
+        <div id="portfolio" className='slides opacity-0 transition-all'>
+          <Portfolio />
+        </div>
+    </div>
   )
 }
