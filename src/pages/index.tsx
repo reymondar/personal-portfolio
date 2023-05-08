@@ -2,6 +2,8 @@ import React , { useEffect, useState ,useRef , useCallback } from 'react'
 import Slider from '../components/slider'
 import Portfolio from '../components/Portfolio'
 import NavBar from '@/components/NavBar'
+import Image from 'next/image'
+import myself from '../../public/foto-cropped.jpg'
 
 const tools = ['Gatsby', 'Next.js', 'firebase', 'tailwind', 'styled components', 'Sass', 'react-query' , 'GraphQL', 'Typescript']
 const toolLogos = ['/React.svg','/gatsby-seeklogo.com.svg','/Nextjs-logo.svg','/firebase-logo.svg','/Tailwind_CSS_logo.svg','/sass-logo.svg','/GraphQL_Logo.svg','/reactquery-logo.png','/chart.svg']
@@ -20,10 +22,10 @@ export default function Home() {
 
       actualOffset > scrollTop ? setGoingDown(true) : setGoingDown(false)
     }
-    document.querySelector('.container')?.addEventListener('scroll',updateScroll)
+    window.addEventListener('scroll',updateScroll)
 
     return () => {
-       document.querySelector('.container')?.removeEventListener('scroll',updateScroll)
+       window.removeEventListener('scroll',updateScroll)
       }
   },[scrollTop])
 
@@ -65,7 +67,7 @@ console.log('useffect run')
     
    const pageOffset = target.offsetTop
 
-    container.scrollTo({
+    window.scrollTo({
       top: pageOffset,
       behavior: 'smooth'
     });
@@ -80,14 +82,13 @@ console.log('useffect run')
   }
 
   return (
-    <div>
+    <div className='bg-main px-1 sm:px-4 lg:px-12'>
         <NavBar goingDown={goingDown} handleClick={handleClick} />
-        <div onScroll={handleScroll} className='bg-main container px-4 lg:px-12 h-full w-full overflow-x-hidden overflow-y-scroll scrollbar-hide bg-gray-950 rounded-md bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-40 border border-gray-100'>
                 <div className='w-full flex flex-col place-content-center pt-32'>
                   <h1 className='text-5xl lg:text-7xl'>Hello there</h1>
                   <h2 className='text-2xl'>Mind if I borrow 3 minutes of your life?</h2>
                   <button onClick={handleClick} className='self-center w-fit text-xs my-4 p-2 border rounded-md bg-opacity-5'><a href='#myself'>Absolutely, lets go</a></button>
-                  <div className='pt-24 text-center'>  
+                  <div className='pt-24 text-center w-full'>  
                   <Slider images={toolLogos} />
                     <section className='pt-24'>
                       <p className='mb-4 slides opacity-0 transition-all' id="myself">As a front end developer, I like solving problems and connecting wires but foremost, leaving things pretty!</p>
@@ -99,22 +100,8 @@ console.log('useffect run')
                   <h1 className='text-7xl p-1 pb-4 sm:p-4 slides opacity-0 transition-all'>Myself</h1>
                   <p className='lg:px-12 slides opacity-0 transition-all'>I am a self-taught React developer based in Buenos Aires. I am deeply passionate about coding and building digital experiences.</p>
                 </div>
-                <div className='w-full text-center py-6 slides opacity-0 transition-all'>
-                  <div className='flex justify-around py-2'>
-                    <h3 className='p-1 text-xs'>Gatsby</h3>
-                    <h3 className='p-1 text-xs'>Next.js</h3>
-                    <h3 className='p-1 text-xs'>firebase</h3>
-                  </div>
-                  <div className='flex justify-between py-2'>
-                    <h3 className='p-1 text-xs break-all'>git</h3>
-                    <h3 className='p-1 text-xs'>TailwindCss</h3>
-                    <h3 className='p-1 text-xs'>GraphQL</h3>
-                  </div>
-                  <div className='flex justify-around py-2'>
-                    <h3 className='p-1 text-xs'>react-query</h3>
-                    <h3 className='p-1 text-xs'>Sass</h3>
-                    <h3 className='p-1 text-xs'>Typescript</h3>
-                  </div>
+                <div className='w-full flex justify-center py-6 slides opacity-0 transition-all'>
+                 <Image src={myself} alt="myself" width={250} height={250} className='border border-solid rounded-lg object-contain' />  
                 </div>
                 <div className='w-full lg:px-12'>
                 <p className='slides opacity-0 transition-all'>I got my start in coding by creating games, which helped me develop a keen eye for detail and a love of problem-solving.</p>
@@ -123,8 +110,9 @@ console.log('useffect run')
                 <div id="portfolio" className='slides opacity-0 transition-all'>
                   <Portfolio />
                 </div>
-        </div>
+     
       </div>
+
      
   )
 }
