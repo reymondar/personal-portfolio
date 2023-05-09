@@ -41,7 +41,7 @@ const Project = ({title , skills , description , link , github , impo , preview}
                 return  <span key={skill} className="inline-block bg-orange-100 rounded-full p-1 sm:p-2 text-[0.4rem] font-semibold text-gray-700 mr-1 sm:mr-2 mb-2 hover:bg-yellow-500 hover:cursor-default hover:text-gray-100 transition-all">{skill}</span>
                 })}
         </div>
-    </div>
+    </div> 
     )
 }
 

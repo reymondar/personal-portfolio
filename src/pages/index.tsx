@@ -10,7 +10,7 @@ const toolLogos = ['/React.svg','/gatsby-seeklogo.com.svg','/Nextjs-logo.svg','/
 
 
 const Paragraph = ({text}: {text: string}) => {
-  return <p className='slides opacity-0 transition-all font-sans text-xs lg:text-md text-center mb-4'>{text}</p>
+  return <p className='text-center slides opacity-0 transition-all font-sans text-[0.55] lg:text-md sm:text-center mb-4'>{text}</p>
 }
 
 export default function Home() {
@@ -24,13 +24,12 @@ export default function Home() {
     entries.forEach((entry) => {
       if(entry.isIntersecting) {
         entry.target.classList.add(...classes)
-        console.log('intersecting!')
       }
 
       else entry.target.classList.remove(...classes)
     })
   },
-  { rootMargin: '-23%'}
+  { rootMargin: '-21%'}
   )
   
   const sections = document.querySelectorAll('.slides')
@@ -72,22 +71,23 @@ export default function Home() {
           <h2 className='text-center my-4 sm:text-2xl slides opacity-0 transition-all'>{`I'm Ramon Arana, welcome.`}</h2>
           <h2 className='text-center text-xs slides opacity-0 transition-all'>Mind if I borrow 3 minutes of your life?</h2>
           <button onClick={handleClick} className='self-center w-fit text-xs my-4 p-2 border rounded-md bg-opacity-5 slides opacity-0 transition-all'><a href='#myself'>Absolutely, lets go</a></button>
-          <div className='pt-12 text-center w-full'>  
+          <div className='pt-16 w-full'>  
             <div className='slides opacity-0 transition-all'>
               <Slider images={toolLogos} />
             </div>
-            <section className='pt-12 lg:px-48' id="myself">
-              <Paragraph text={`As a front end developer, I like solving problems and connecting wires but foremost, leaving things pretty!`} />
-              <Paragraph text={`If you are seeking for someone who is always looking to work with the latest technologies and the best way to solve any problem, you are in the right place.`} />
+            <section className='pt-6 lg:px-48' id="myself">
+              <Paragraph text={`As a front-end developer, I'm passionate about creating engaging and visually stunning websites and applications.`} />
+              <Paragraph text={`I specialize in building responsive, intuitive user interfaces that prioritize usability and accessibility.`} />
+              <Paragraph text={`If you're looking for a developer who stays up-to-date with the latest technologies and is dedicated to finding the most effective solutions for every project, then you are in the right place.`} />
             </section>
           </div>
         </div>
         <div className='w-full lg:px-48'>
-          <h1 className='text-center text-5xl sm:text-7xl p-3 py-8 sm:p-4 sm:py-8 slides opacity-0 transition-all'>Myself</h1>
+          <h1 className='text-center text-5xl sm:text-6xl py-8 sm:p-4 sm:py-8 slides opacity-0 transition-all'>Myself</h1>
           <Paragraph text={`I am a self-taught React developer based in Buenos Aires. I am deeply passionate about coding and building digital experiences`} />
         </div>
         <div className='w-full flex justify-center py-6 slides opacity-0 transition-all'>
-          <Image src={myself} alt="myself" width={250} height={250} className='border border-solid border-blue-700 rounded-full object-contain' />  
+          <Image src={myself} alt="myself" width={230} height={230} className='border border-solid border-blue-700 rounded-full object-contain' />  
         </div>
         <div className='w-full lg:px-48'>
           <Paragraph text={`I got my start in coding in college creating games, which helped me develop a keen eye for detail and a love of problem-solving.`} />

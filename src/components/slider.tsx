@@ -9,14 +9,14 @@ const Slider = ({images}: sliderProps) => {
 
   
   return (
-        <div className='flex justify-around overflow-x-scroll scrollbar-hide'>
+        <div className='flex justify-around flex-wrap scrollbar-hide'>
         {images.map((tool, index) => {
             return <Image 
-            className='mx-2 object-contain'
+            className='m-2 object-contain'
             key={index}
             src={tool} 
-            width={75} 
-            height={75} 
+            width={65} 
+            height={65} 
             alt={tool} />
             })}
         </div>
