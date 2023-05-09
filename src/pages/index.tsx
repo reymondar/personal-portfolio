@@ -10,7 +10,7 @@ const toolLogos = ['/React.svg','/gatsby-seeklogo.com.svg','/Nextjs-logo.svg','/
 
 
 const Paragraph = ({text}: {text: string}) => {
-  return <p className='text-center slides opacity-0 transition-all font-sans text-[0.55] lg:text-md sm:text-center mb-4'>{text}</p>
+  return <p className='text-center slides opacity-0 transition-all font-sans text-[0.55rem] md:text-md sm:text-center mb-4'>{text}</p>
 }
 
 export default function Home() {
