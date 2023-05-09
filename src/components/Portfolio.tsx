@@ -36,7 +36,7 @@ const Project = ({title , skills , description , link , github , impo , preview}
                     <Image alt='githublogo' src='/github.png' width={35} height={35} className='object-contain ml-2' />
                 </a>
             </div>
-            <p className={`font-monserrat text-[0.4rem]/[1rem] lg:text-sm  lg:leading-6 ${isOpened ? '' : 'truncate' } transition-all`}>{description}</p>
+            <p className={`font-monserrat text-[0.4rem]/[1rem] lg:text-xs  lg:leading-5 ${isOpened ? '' : 'truncate' } transition-all`}>{description}</p>
         </div>
         <div className="m-2 sm:px-6 sm:py-2">
             {skills.map(skill =>{
