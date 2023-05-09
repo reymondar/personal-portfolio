@@ -40,7 +40,7 @@ const Project = ({title , skills , description , link , github , impo , preview}
         </div>
         <div className="m-2 sm:px-6 sm:py-2">
             {skills.map(skill =>{
-                return  <span key={skill} className="inline-block bg-orange-100 rounded-full p-1 sm:p-2 text-[0.4rem] font-semibold text-gray-700 mr-1 sm:mr-2 mb-2 hover:bg-yellow-500 hover:cursor-default hover:text-gray-100 transition-all">{skill}</span>
+                return  <span key={skill} className="inline-block shadow-md bg-gray-100/25 rounded-full p-1 lg:px-2 text-[0.4rem] font-semibold text-black mr-1 sm:mr-2 mb-2 hover:bg-yellow-500 hover:cursor-default hover:text-gray-100 transition-all">{skill}</span>
                 })}
         </div>
     </div> 
