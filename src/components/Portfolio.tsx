@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+    import React, { useState } from 'react'
 import Image from 'next/image'
 import projects from "../../public/projects.json"
 type projectType = {
@@ -26,7 +26,9 @@ const Project = ({title , skills , description , link , github , impo , preview}
 
     return(
     <div onClick={handleClick} className={`${isOpened ? 'bg-white bg-opacity-70 hover:cursor-zoom-out' : ''} lg:w-[45%] rounded overflow-hidden shadow-lg my-6 hover:cursor-zoom-in md:hover:shadow-orange-300 transition-all hue-rotate-60 mx-2 h-fit`}>
-        <div onClick={handleOpen} className='h-24 bg-white -hue-rotate-60 hover:cursor-pointer' style={{backgroundImage: `url(${preview})`,backgroundSize:'cover'}}></div>
+        <div onClick={handleOpen} className='h-24 bg-white -hue-rotate-60 hover:cursor-pointer w-full position overflow-hidden'>
+            <Image src={preview} width={1000} height={700} className='object-cover' alt={preview} />
+        </div>
         <div className="px-2 sm:px-6 py-2 sm:py-4 overflow-hidden">
             <div className="flex align-middle mb-2 ">
                 <h1 className='self-center font-bold text-xs sm:text-sm'>{title}</h1>
@@ -34,7 +36,7 @@ const Project = ({title , skills , description , link , github , impo , preview}
                     <Image alt='githublogo' src='/github.png' width={35} height={35} className='object-contain ml-2' />
                 </a>
             </div>
-            <p className={`font-monserrat text-[0.4rem]/[1rem] lg:text-xs  lg:leading-6 ${isOpened ? '' : 'truncate' } transition-all`}>{description}</p>
+            <p className={`font-monserrat text-[0.4rem]/[1rem] lg:text-sm  lg:leading-6 ${isOpened ? '' : 'truncate' } transition-all`}>{description}</p>
         </div>
         <div className="m-2 sm:px-6 sm:py-2">
             {skills.map(skill =>{

@@ -1,4 +1,5 @@
-import React , { useEffect, useState ,useRef , useCallback } from 'react'
+import Head from 'next/head'
+import React , { useEffect, useState } from 'react'
 import Slider from '../components/slider'
 import Portfolio from '../components/Portfolio'
 import NavBar from '@/components/NavBar'
@@ -65,6 +66,14 @@ export default function Home() {
   }
 
   return (
+    <>
+    <Head>
+      <title>Ramón Arana Barceló</title>
+      <meta name='description' content='React Front-end developer' />
+      <meta property='og:title' content='Ramon Arana Portfolio' />
+      <meta property='og:description' content='Front-end developer' />
+      <meta property='og:url' content='https://personal-portfolio-reymondar.vercel.app/' />
+    </Head>
     <div className='px-2 sm:px-4'>
         <NavBar handleClick={handleClick} />
         <div className='w-full flex flex-col place-content-center pt-32'>
@@ -97,5 +106,6 @@ export default function Home() {
           <Portfolio />
         </div>
     </div>
+    </>
   )
 }
