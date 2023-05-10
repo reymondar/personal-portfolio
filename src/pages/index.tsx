@@ -73,6 +73,7 @@ export default function Home() {
       <meta property='og:title' content='Ramon Arana Portfolio' />
       <meta property='og:description' content='Front-end developer' />
       <meta property='og:url' content='https://personal-portfolio-reymondar.vercel.app/' />
+      <meta property='og:image' content='/foto-cropped.jpg' />
     </Head>
     <div className='px-2 sm:px-4'>
         <NavBar handleClick={handleClick} />
