@@ -87,15 +87,15 @@ export default function Home() {
               <Slider images={toolLogos} />
             </div>
             <section className='pt-6 px-6 md:px-12 lg:px-24 xl:px-48' id="myself">
-              <Paragraph text={`As a front-end developer, I'm passionate about creating engaging and visually stunning websites and applications.`} />
+              <Paragraph text={`As a front-end developer, I'm a perfectionist.`} />
               <Paragraph text={`I specialize in building responsive, intuitive user interfaces that prioritize usability and accessibility.`} />
-              <Paragraph text={`If you're looking for a developer who stays up-to-date with the latest technologies and is dedicated to finding the most effective solutions for every project, then you are in the right place.`} />
+              <Paragraph text={`Thats why I'd like to work with someone that really pushes me to my limits, because I'm the type of person who is out there just for the challenges ahead.`} />
             </section>
           </div>
         </div>
         <div className='w-full px-6 md:px-12 lg:px-24 xl:px-48'>
           <h1 className='text-center text-5xl sm:text-6xl py-8 sm:p-4 sm:py-8 slides opacity-0 transition-all'>Myself</h1>
-          <Paragraph text={`I am a self-taught React developer based in Buenos Aires. I am deeply passionate about coding and building digital experiences`} />
+          <Paragraph text={`I am a self-taught React developer based in Buenos Aires. I'm an all-or-nothing computer geek. My passion goes beyond being a developer.`} />
         </div>
         <div className='flex justify-center pt-2 pb-6'>
           <div className='h-28 w-28 slides opacity-0 transition-all '>
@@ -103,8 +103,9 @@ export default function Home() {
           </div>
         </div>
         <div className='w-full px-6 md:px-12 lg:px-24 xl:px-48'>
-          <Paragraph text={`I got my start in coding in college creating games, which helped me develop a keen eye for detail and a love of problem-solving.`} />
-          <Paragraph text={`Today, with a year and a half of experience under my belt, I'm skilled at working with APIs, databases, and popular React frameworks like Next.js and Gatsby. I'm always excited to take on new challenges and create innovative solutions for my clients and their users.`} />
+          <Paragraph text={`I ran a small bussiness creating websites on Wordpress for about 8 months, just before the pandemic hit.`} />
+          <Paragraph text={`That's where my passion for creating digital experiences was born. That's where I started learning the way of the web (js).`} />
+          <Paragraph text={`Today, with a year and a half of experience under my belt, I'm skilled at working with APIs, NoSQL databases, and React frameworks like Next.js and Gatsby. `} />
         </div>  
         <div id="portfolio" className='slides opacity-0 transition-all'>
           <Portfolio />
