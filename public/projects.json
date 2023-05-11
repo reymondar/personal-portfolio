@@ -11,7 +11,7 @@
     {
     "title": "Crypto Dashboard", 
     "skills": ["Next.js" , "Sass" , "react-query" , "Typescript","Chartjs"], 
-    "description": "I was intreseted in learning more about working with API's, using react-query and Next.js. I created this project on Next.js (typescript). I started by installing a popular library called Chartjs and react-chartjs-2 to create the graphs. Then react-query to manage api responses and Sass for the styling. I learned so much so much. More than with any other project or course I created because I (or at least tried to) optimized every aspect on the fly. Of course there is still some refactor to make, like the responsiveness and typescript errors but other than that I used a ton of react tools to make this app flyy..",
+    "description": "I was intreseted in learning more about working with API's, using react-query and Next.js. I created this project on Next.js (typescript). I started by installing a popular library called Chartjs and react-chartjs-2 to create the graphs. Then react-query to manage api responses and Sass for the styling. With this project I learned a lot, particullary refactoring. From Js to Ts, fixing all type of bugs and much more. Of course there is still some refactor to make, like the responsiveness a bit (although it's a desktop dashboard).",
     "link":"https://crypto-dashboard-reymondar.vercel.app/" ,
     "github": "https://github.com/reymondar/crypto-dashboard" ,
     "impo": 2,
