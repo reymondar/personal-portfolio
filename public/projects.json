@@ -47,7 +47,7 @@
 {
     "title": "OMA San Isidro", 
     "skills": ["Nextjs","Sass","git"], 
-    "description": "Full disclosure, I was a collaborator in this project. This is a full in-production site created for the San Isidro math olympics. The creator of the repository, Julian Zylber, was the leader of the project and the one who very kindly taught me git (he is literally a teacher). I enjoyed this one because I got the chance to work with real developers. My role was partly to create the pages (css) and their layouts from figma. This project was also my first approach to Sass, which I later used for the Crypto Dashboard. Honestly it was fun to work in a team and be part of something bigger.  ",
+    "description": "I was in charge of the front-end for this project. I replicated every single page from a figma design provided by the designer. This is a full in-production site created for the San Isidro math olympics. The creator of the repository, Julian Zylber, was the leader of the project and the one who very kindly taught me git (he is literally a teacher). I enjoyed this one because I got the chance to work with real developers. This project was also my first approach to Sass, which I later used for the Crypto Dashboard and other stuff. Honestly it was fun to work in a team and be part of something bigger. Looking foward for similar projects. ",
     "link":"https://www.omasanisidro.org.ar/" , 
     "github": "https://github.com/JZylber/oma-san-isidro" , 
     "impo": 4,
