@@ -6,7 +6,16 @@
         "link":"https://www.omasanisidro.org.ar/" , 
         "github": "https://github.com/JZylber/oma-san-isidro" , 
         "impo": 4,
-        "preview": "/oma-preview.png"
+        "preview": "/oma-preview.webp"
+    },
+    {
+        "title": "Nit Charge", 
+        "skills": ["Gatsby","SASS","React","Typescript"],
+        "description": "I took on an exciting challenge with a startup, where I rapidly designed, coded, and optimized their website on the go. In just two weeks, we managed to deploy the site, and it's currently making great progress. I'm thrilled to share that the website has received a perfect 100 score on Google's Lighthouse Report, reflecting its outstanding performance.",
+        "link": "https://nitcharge.com/", 
+        "github": "", 
+        "impo": 1,
+        "preview": "/nit-preview.webp"
     },
     {
         "title": "Evernote Clone", 
@@ -15,7 +24,7 @@
         "link": "https://evernote-clone-five.vercel.app/", 
         "github": "https://github.com/reymondar/evernote-clone", 
         "impo": 1,
-        "preview": "/evernote-preview.png"
+        "preview": "/evernote-preview.webp"
     },
     {
     "title": "Crypto Dashboard", 
@@ -24,7 +33,7 @@
     "link":"https://crypto-dashboard-reymondar.vercel.app/" ,
     "github": "https://github.com/reymondar/crypto-dashboard" ,
     "impo": 2,
-    "preview": "/crypto-preview.png"
+    "preview": "/crypto-preview.webp"
 },
     {
     "title": "KanBan app", 
@@ -33,7 +42,7 @@
     "link":"https://kanbanappmain.gatsbyjs.io/" , 
     "github": "https://github.com/reymondar/kanban-app" , 
     "impo": 3,
-    "preview": "/kanban-preview.png"
+    "preview": "/kanban-preview.webp"
 },
 {
         "title": "Planets Fact Size", 
@@ -42,7 +51,7 @@
         "link":"https://planets-facts-size.vercel.app/" , 
         "github": "https://github.com/reymondar/planets-facts-size" , 
         "impo": 4,
-        "preview": "/planets-preview.png"
+        "preview": "/planets-preview.webp"
 },
 {
     "title": "Personal Portfolio", 
@@ -51,7 +60,7 @@
     "link":"https://planets-facts-size.vercel.app/" , 
     "github": "https://github.com/reymondar/personal-portfolio" , 
     "impo": 4,
-    "preview": "/portfolio-preview.png"
+    "preview": "/portfolio-preview.webp"
 },
     {
         "title": "Vino Vivo", 
@@ -60,7 +69,7 @@
         "link":"https://vinovivo.online/" , 
         "github": "#" , 
         "impo": 4,
-        "preview": "/vinovivo1-preview.png"
+        "preview": "/vinovivo1-preview.webp"
     }
 
 ]
