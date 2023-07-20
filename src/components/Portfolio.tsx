@@ -25,7 +25,7 @@ const Project = ({title , skills , description , link , github , impo , preview}
     }
 
     return(
-    <div onClick={handleClick} className={`${isOpened ? 'bg-white bg-opacity-70 hover:cursor-zoom-out' : ''} lg:w-[45%] rounded overflow-hidden shadow-lg my-6 hover:cursor-zoom-in md:hover:shadow-orange-300 transition-all hue-rotate-60 mx-2 h-fit`}>
+    <div onClick={handleClick} className={`${isOpened ? ' bg-opacity-70 hover:cursor-zoom-out' : ''} lg:w-[45%] rounded overflow-hidden shadow-lg my-6 hover:cursor-zoom-in md:hover:shadow-orange-300 transition-all hue-rotate-60 mx-2 h-fit`}>
         <div onClick={handleOpen} className='h-24 bg-white -hue-rotate-60 hover:cursor-pointer w-full position overflow-hidden'>
             <Image src={preview} width={1000} height={700} className='object-cover' alt={preview} />
         </div>

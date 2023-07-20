@@ -6,7 +6,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
 :root {
-  color:black;
+  color:rgb(255, 255, 255);
   font-size: 2rem;
   font-family: 'Comfortaa' , sans-serif;
 
@@ -20,10 +20,9 @@ html {
 }
 
 body {
-  color:black;
   scroll-behavior: smooth;
   transition: scroll-behavior 0.5s ease-in-out;
-
+  background-color: rgba(19, 94, 134, 0.768)
 }
 
 body:before {
@@ -35,21 +34,24 @@ body:before {
   width: 100%;
   height: 100%;
   z-index: -10;
-  background: url('../../public/meld-blur.jpg') no-repeat center center;
+  background: url('../../public/background-pattern.webp') no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  opacity: 0.1;
 }
 
 h1,h2,a {
-  color: black;
+  color: rgb(255, 255, 255);
+  text-shadow: 2px 5px 8px rgba(0,0,0,0.4);
 }
 
 p {
   font-family: 'monserrat', sans-serif;
-  color: black;
+  color: rgb(255, 246, 246);
   font-weight: 500;
+  text-shadow: 2px 5px 8px rgba(0,0,0,0.4);
   
 }
 
