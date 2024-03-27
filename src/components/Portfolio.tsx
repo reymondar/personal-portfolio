@@ -1,4 +1,4 @@
-    import React, { useState } from 'react'
+    import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
 import projects from "../../public/projects.json"
 type projectType = {
@@ -14,7 +14,7 @@ type projectType = {
 const Project = ({title , skills , description , link , github , impo , preview} : projectType) => {
   
     const [isOpened , setIsOpened] = useState(false)
-
+    
 
     const handleClick = () => {
         setIsOpened(prev => !prev)
